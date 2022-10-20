@@ -5,6 +5,7 @@ public class Jass extends RuleSet{
 	{
 		super();
 		this.addBlock("if", "else", "elseif", "endif");
+		this.addBlock("constant function", "endfunction");
 		this.addBlock("function", "endfunction");
 		this.addBlock("globals", "endglobals");
 		this.addBlock("loop", "endloop");

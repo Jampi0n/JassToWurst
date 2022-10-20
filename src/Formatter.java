@@ -35,7 +35,8 @@ public class Formatter {
 		for (String line : lines) {
 			try {
 			line = line.trim();
-			int intDif = this.ruleSet.matchIdentifier(findFirstIdentifier(line));
+			//int intDif = this.ruleSet.matchIdentifier(findFirstIdentifier(line));
+			int intDif = this.ruleSet.matchLine(line);
 			if (intDif == -1) {
 				indentation += intDif;
 			}
@@ -49,7 +50,7 @@ public class Formatter {
 			if (intDif == 1) {
 				indentation += intDif;
 			}
-
+			System.out.println(lineNum + ": " + indentationString[numTabs] + line);
 			outBuilder.append(indentationString[numTabs] + line + "\n");
 			} catch(Exception e) {
 				System.err.println("Error in line " + lineNum + ": " + line);

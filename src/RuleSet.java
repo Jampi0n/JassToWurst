@@ -68,6 +68,15 @@ public abstract class RuleSet {
 		}
 		return 0;
 	}
+	
+	public int matchLine(String line) {
+		for(String key : this.intendationMap.keySet()) {
+			if(line.startsWith(key)) {
+				return this.intendationMap.get(key);
+			}
+		}
+		return 0;
+	}
 
 	public String convert(String in) {
 		String workingString = in;
